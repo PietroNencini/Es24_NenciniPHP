@@ -8,31 +8,49 @@
 </head>
 <body>
 <?php
-    $sender = $_GET["sender"];
-    $addresse = $_GET["addressee"];
-    $object = $_GET["object"];
-    $body = $_GET["mail_body"];
-    echo "<h1> Mail creata!</h1>";
+    $num1 = $_GET["num1"];
+    $num2 = $_GET["num2"];
+    if(empty($num1) or empty($num2)) {
+        echo "<p id='error_par'> Error: Cannote insert empty values </p>";
+        echo "<a href='index.html'> ritorna alla pagina inziale (e possibilmente inserisci valori validi) </a>";
+    } else {
+        echo "Numeri inseriti: <ul>
+                <li> $num1 </li>
+                <li> $num2 </li> </ul>";
+    }
+    $num1 = intval($num1);
+    $num1 = intval($num2);
+
+    $sum = $num1 + $num2;
+    $diff = $num1 - $num2;
+    $mul = $num1 * $num2;
+    $div = $num1 / $num2;
+
 ?>
 
-    <h3> INFORMAZIONI: </h3>
-    <div id="mail_info">
-        <p>Mittente: <?php echo $sender;?></p>
-        <p>Destinatario: <?php echo $addresse;?></p>
-        <p>Oggetto: <?php echo $object;?></p>
-    </div>
+<table>
+    <tr>
+        <th>Operazione</th>
+        <th>Risultato</th>
+    </tr>
+    <tr>
+        <td>Somma</td>
+        <td><?php echo $sum;?></td>
+    </tr>
+    <tr>
+        <td>Differenza</td>
+        <td><?php echo $diff;?></td>
+    </tr>
+    <tr>
+        <td>Prodotto</td>
+        <td><?php echo $mul;?></td>
+    </tr>
+    <tr>
+        <td>Divisione</td>
+        <td><?php echo $num2 == 0 ? "<span style='color:red'> IMPOSSIBILE </span> " : $div;?></td>
+    </tr>
+</table>
 
-    <h3>CONTENUTO DELLA MAIL:</h3>
-    <div id="mail_text">
-        <p><?php echo $body ?></p>
-    </div>
-
-    <hr>
-    <h3> STATISTICHE CORPO MAIL </h3>
-    <div id="mail_stats">
-        <p> Lunghezza del corpo della mail: <?php echo strlen($body) ?> </p>
-        <p> Numero di parole del corpo della mail: <?php echo str_word_count($body) ?> </p>
-    </div>
 
 
 </body>

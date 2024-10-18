@@ -1,14 +1,10 @@
-
-
-#mail_text {
-    width: 50%;
-    background-color: orange;
+table, td, th, tr {
+    border: black solid 1px;
+    border-collapse: collapse;
 }
 
-#mail_info {
-    background-color: cyan;
-}
 
-#mail_stats {
-    background-color: gray;
+
+p.error_par {
+    color:red;
 }

@@ -8,13 +8,16 @@
 </head>
 <body>
     
-    <form action="./summary.php" method="get">
-        <label for="name">Nome:</label>
-        <input type="text" name="name" placeholder="inserire nome..." required> <br>
-        <label for="surname">Cognome:</label>
-        <input type="text" name="surname" placeholder="inserire cognome..." required> <br>
-        <label for="surname">Indirizzo email:</label>
-        <input type="email" name="email" placeholder="inserire email..." required><br>
+    <h1> SCRIVI LA TUA EMAIL </h1>
+
+    <form action="./sending.php" method="get">
+        <label for="name">Mittente</label>
+        <input type="email" name="sender" placeholder="example@dominio.com" required> <br>
+        <label for="surname">Destinatario</label>
+        <input type="email" name="addressee" placeholder="example@dominio.com" required> <br>
+        <label for="surname">Oggetto della mail</label>
+        <input type="text" name="object" placeholder="di' qualcosa..." required><br>
+        <textarea name="mail_body" id="text" rows="10" cols="10"></textarea>
 
         <button type="submit" style="background-color: darkgreen; color: white;"> INVIA </button>
         <button type="reset" style="background-color: red; color: white;"> CANCELLA </button>

@@ -1,4 +1,14 @@
-table, td, th, tr {
-    border: black solid 1px;
-    border-collapse: collapse;
+
+
+#mail_text {
+    width: 50%;
+    background-color: orange;
+}
+
+#mail_info {
+    background-color: cyan;
+}
+
+#mail_stats {
+    background-color: gray;
 }
